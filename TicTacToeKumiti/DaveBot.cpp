@@ -4,7 +4,8 @@
 DaveBot::DaveBot(Piece p) : Player(p)
 {}
 
-int winningMove(Board b, Piece p)
+ 
+int DaveBot::winningMove(Board b, Piece p) const
 {
 	for (size_t i{ 1 }; i <= b.size(); ++i)
 	{

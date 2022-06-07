@@ -3,9 +3,11 @@
 #include <random>
 #include <functional>
 
-std::random_device rd;
-std::mt19937 g(rd());
-std::uniform_int_distribution<int> distribution(0, 9);
+namespace {
+	std::random_device rd;
+	std::mt19937 g(rd());
+	std::uniform_int_distribution<int> distribution(0, 9);
+}
 
 auto random = std::bind(distribution, g);
 

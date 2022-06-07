@@ -2,12 +2,18 @@
 
 #include <iostream>
 #include <sstream>
+#include <chrono>
+#include <thread>
+
 
 #include "HumanPlayer.h"
 #include "DaveBot.h"
 #include "ThiagoBot.h"
 #include "BrohenBot.h"
 #include "NatBot.h"
+#include "SamuelBot.h"
+#include "SamuelBot2.h"
+
 #include "Player.h"
 
 namespace {
@@ -38,13 +44,10 @@ Game::Game() {
 	bots["Brohen"] = std::move(std::make_unique<BrohenBot>(Piece::MT));
 	bots["Natalia"] = std::move(std::make_unique<NatBot>(Piece::MT));
 	bots["Dave"] = std::move(std::make_unique<DaveBot>(Piece::MT));
+	bots["Samuel1"] = std::move(std::make_unique<DaveBot>(Piece::MT));
+	bots["Samuel2"] = std::move(std::make_unique<DaveBot>(Piece::MT));
 
-	players[1] = bots.at("Thiago").get();
-	players[1]->setPiece(Piece::X);
-	players[0] = bots.at("Dave").get();
-	players[0]->setPiece(Piece::O);
-
-	currentPlayer = 0;
+	
 }
 
 bool Game::isOver(const Board& board) const
@@ -71,6 +74,8 @@ void Game::play()
 			currentPlayer = (currentPlayer + 1) % 2; // next player
 		else 
 			msg = "please choose a square to move on";
+
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 	}
 
 	std::cout << "\n\n";
@@ -158,7 +163,7 @@ void Game::showHeader(const Board& board, const std::string& msg) const
 {
 	system("CLS");
 	std::cout << menu << board.getBoard() << "\n\n";
-	std::cout << "Player " <<
-		Board::pieces.at(players[currentPlayer]->getMyPiece()) << "\'s turn\n\n" <<
+	std::cout << playerNames[currentPlayer] << " (" << 
+		Board::pieces.at(players[currentPlayer]->getMyPiece()) << ")\'s turn\n\n" <<
 		msg << "\n";
 }

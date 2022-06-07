@@ -45,6 +45,12 @@
     <ClCompile Include="NatBot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SamuelBot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SamuelBot2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h">
@@ -72,6 +78,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="NatBot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SamuelBot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SamuelBot2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

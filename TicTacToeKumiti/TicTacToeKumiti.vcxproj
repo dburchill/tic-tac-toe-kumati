@@ -151,6 +151,8 @@
     <ClCompile Include="KyleBot.cpp" />
     <ClCompile Include="NatBot.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="SamuelBot.cpp" />
+    <ClCompile Include="SamuelBot2.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="ThiagoBot.cpp" />
   </ItemGroup>
@@ -163,6 +165,8 @@
     <ClInclude Include="KyleBot.h" />
     <ClInclude Include="NatBot.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="SamuelBot.h" />
+    <ClInclude Include="SamuelBot2.h" />
     <ClInclude Include="ThiagoBot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
