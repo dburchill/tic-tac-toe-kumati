@@ -30,7 +30,19 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ComputerPlayer.cpp">
+    <ClCompile Include="DaveBot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ThiagoBot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BrohenBot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="KyleBot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NatBot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,7 +59,19 @@
     <ClInclude Include="Game.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ComputerPlayer.h">
+    <ClInclude Include="DaveBot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ThiagoBot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BrohenBot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KyleBot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NatBot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

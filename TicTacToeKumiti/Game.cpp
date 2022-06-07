@@ -4,7 +4,10 @@
 #include <sstream>
 
 #include "HumanPlayer.h"
-#include "ComputerPlayer.h"
+#include "DaveBot.h"
+#include "ThiagoBot.h"
+#include "BrohenBot.h"
+#include "NatBot.h"
 #include "Player.h"
 
 namespace {
@@ -20,12 +23,27 @@ namespace {
    ---------------------------------------------------------
 )";
 
+
+	const char* chosePlayerMenu = R"(
+                  Tic-Tac-Toe Kumati
+   ---------------------------------------------------------
+   
+
+)";
 }
 
 
 Game::Game() {
-	players[0] = std::move(std::make_unique<HumanPlayer>(Piece::X));
-	players[1] = std::move(std::make_unique<ComputerPlayer>(Piece::O));
+	bots["Thiago"] = std::move(std::make_unique<ThiagoBot>(Piece::MT));
+	bots["Brohen"] = std::move(std::make_unique<BrohenBot>(Piece::MT));
+	bots["Natalia"] = std::move(std::make_unique<NatBot>(Piece::MT));
+	bots["Dave"] = std::move(std::make_unique<DaveBot>(Piece::MT));
+
+	players[1] = bots.at("Thiago").get();
+	players[1]->setPiece(Piece::X);
+	players[0] = bots.at("Dave").get();
+	players[0]->setPiece(Piece::O);
+
 	currentPlayer = 0;
 }
 
@@ -59,17 +77,15 @@ void Game::play()
 
 	if (board.isWonBy(players[0]->getMyPiece()))
 	{
-		std::cout << "Player " <<
-			Board::pieces.at(players[0]->getMyPiece()) <<
-			" WINS!!!";
+
+		std::cout << playerNames[0] << " WINNS!!!\n\n";
+		 
 	}
 	else {
 
 		if (board.isWonBy(players[1]->getMyPiece()))
 		{
-			std::cout << "Player " <<
-				Board::pieces.at(players[1]->getMyPiece()) <<
-				" WINS!!!";
+			std::cout << playerNames[1] << " WINNS!!!\n\n";
 		}
 		else {
 			std::cout << "Draw.";
@@ -78,6 +94,64 @@ void Game::play()
 	}
 
 	std::cout << "\n\n";
+}
+
+
+void Game::choosePlayers()
+{
+	std::string msg;
+
+	std::string plyr1;
+	// get player 1 
+	while (true)
+	{
+		system("CLS");
+		std::cout << "Choose Player 1 \n" << msg << "\n";
+		for (auto& [name, _] : bots) {
+			std::cout << "[" << name << "]\n";
+		}
+
+		std::cin >> plyr1;
+
+		if (bots.contains(plyr1))
+		{
+			players[0] = bots.at(plyr1).get();
+			playerNames[0] = plyr1;
+			break;
+		}
+		msg = "Choose a player from the list\n";
+	}
+
+	// get player 2 
+	std::string plyr2;
+	while (true)
+	{
+		system("CLS");
+		std::cout << "Choose Player 2 \n" << msg << "\n";
+		for (auto& [name, _] : bots) {
+			std::cout << "[" << name << "]\n";
+		}
+
+		std::cin >> plyr2;
+
+		if (bots.contains(plyr2))
+		{
+			players[1] = bots.at(plyr2).get();
+			playerNames[1] = plyr2;
+			break;
+		}
+		msg = "Choose a player from the list\n";
+	}
+
+
+	players[0]->setPiece(Piece::O);
+	players[1]->setPiece(Piece::X);
+
+	std::cout << plyr1 << " is O\n";
+	std::cout << plyr2 << " is X \n";
+	system("pause");
+
+	currentPlayer = 0;
 }
 
 void Game::showHeader(const Board& board, const std::string& msg) const

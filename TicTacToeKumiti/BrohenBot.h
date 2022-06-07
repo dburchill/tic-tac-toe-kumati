@@ -1,13 +1,10 @@
 #pragma once
-
-#pragma once
-
 #include "Player.h"
 
-class ComputerPlayer : public Player
+class  BrohenBot : public Player
 {
 public:
-	ComputerPlayer(Piece p);
+	BrohenBot(Piece p);
 	virtual bool makeMove(Board& board) const override;
 };
 

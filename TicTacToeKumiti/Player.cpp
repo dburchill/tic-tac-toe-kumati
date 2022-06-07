@@ -15,3 +15,8 @@ Piece Player::getOpponentPiece() const
 {
     return  (getMyPiece() == Piece::X ? Piece::O : Piece::X);
 }
+
+void Player::setPiece(Piece p)
+{
+    myPiece = p;
+}

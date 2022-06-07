@@ -10,6 +10,10 @@ int main()
 {
 	Game game;
 
-	game.play();
-	 
+	while (true)
+	{
+		game.choosePlayers();
+		game.play();
+		system("pause");
+	}
 }

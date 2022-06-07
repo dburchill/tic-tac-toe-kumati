@@ -1,7 +1,7 @@
-#include "ComputerPlayer.h"
+#include "DaveBot.h"
 #include <vector>
  
-ComputerPlayer::ComputerPlayer(Piece p) : Player(p)
+DaveBot::DaveBot(Piece p) : Player(p)
 {}
 
 int winningMove(Board b, Piece p)
@@ -24,7 +24,7 @@ int winningMove(Board b, Piece p)
 	return -1;
 }
 
-bool ComputerPlayer::makeMove(Board& board) const
+bool DaveBot::makeMove(Board& board) const
 {
 
 	// possible moves are 1-9

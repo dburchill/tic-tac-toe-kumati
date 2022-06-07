@@ -144,18 +144,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Board.cpp" />
-    <ClCompile Include="ComputerPlayer.cpp" />
+    <ClCompile Include="BrohenBot.cpp" />
+    <ClCompile Include="DaveBot.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="HumanPlayer.cpp" />
+    <ClCompile Include="KyleBot.cpp" />
+    <ClCompile Include="NatBot.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="ThiagoBot.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
-    <ClInclude Include="ComputerPlayer.h" />
+    <ClInclude Include="BrohenBot.h" />
+    <ClInclude Include="DaveBot.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="HumanPlayer.h" />
+    <ClInclude Include="KyleBot.h" />
+    <ClInclude Include="NatBot.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="ThiagoBot.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
