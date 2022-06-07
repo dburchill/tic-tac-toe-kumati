@@ -29,7 +29,7 @@ bool DaveBot::makeMove(Board& board) const
 {
 
 	// possible moves are 1-9
-	std::vector<int>moves{ 5,1,9,3,7,4,2,6,8 };
+	std::vector<int>moves{ 1,5,9,3,7,4,2,6,8 };
 
 	int move = winningMove(board, getMyPiece());
 	if (move < 0)

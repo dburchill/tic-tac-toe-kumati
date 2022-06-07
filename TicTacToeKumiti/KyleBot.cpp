@@ -41,12 +41,12 @@ bool KyleBot::makeMove(Board& b) const
 	//Cases 1, 3, and 5 for p1
 	//Cases 2, 4, and 6 for p2
 	int s = b.getTurn();
-	switch (s)
+ 	switch (s)
 	{
 	case 1:
 		b.placePiece(myPiece, 1);
 		return true;
-		break;
+		break; 
 	case 2:
 		if (b.getPostision(1) == getOpponentPiece() || b.getPostision(3) == getOpponentPiece()
 			|| b.getPostision(7) == getOpponentPiece() || b.getPostision(9) == getOpponentPiece())
