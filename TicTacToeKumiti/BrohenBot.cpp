@@ -8,7 +8,7 @@ bool BrohenBot::makeMove(Board& board) const
 {
 	bool botCanWin{ false };
 	bool otherCanWin{ false };
-	int moves{ 0 };
+	size_t moves{ 0 };
 
 	for (size_t pos{ 1 }; pos <= board.size(); ++pos) {
 		if (board.isLegalMove(pos)) {

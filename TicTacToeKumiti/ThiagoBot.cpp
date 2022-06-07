@@ -17,7 +17,7 @@ bool ThiagoBot::makeMove(Board& board) const
 {
 	bool iCanWin{ false };
 	bool opponentCanWin{ false };
-	int myMove{ 0 };
+	size_t myMove{ 0 };
 
 	//check if the bot wins in the next move
 	for (size_t pos{ 1 }; pos <= board.size(); ++pos) {

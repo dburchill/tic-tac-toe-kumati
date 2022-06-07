@@ -19,22 +19,7 @@ Board::winCombos{
 bool Board::isWonBy(Piece p) const
 {
 
-	//std::set<size_t>heldSquares;
-	//for (size_t i{ 0 }; i < squares.size(); ++i)
-	//	if (squares.at(i) == p)
-	//		heldSquares.insert(i);
-	//
-	//return std::any_of(
-	//  begin(winCombos), end(winCombos),
-	//	[&heldSquares](auto c) { 
-	//		return std::all_of(
-	//			begin(c), end(c),
-	//			[&heldSquares](auto i) {return heldSquares.contains(i); }); });
-
-	// if any of the winning combo has 
-	// all p at those locations in squares 
-	// that p has won
-
+	
 	return  std::any_of(
 		begin(winCombos), end(winCombos),
 		[&](auto t) {
@@ -47,6 +32,21 @@ bool Board::isWonBy(Piece p) const
 size_t Board::size() const
 {
 	return squares.size();
+}
+
+int Board::getTurn() const
+{
+	return 1 + std::count_if(begin(squares), end(squares),
+		[](auto p) {return (p == Piece::O || p == Piece::X); });
+}
+
+Piece Board::getPostision(size_t i) const
+{
+	i -= 1;
+	if (i < squares.size())
+		return squares[i];
+	else
+		return Piece::MT;
 }
 
 Board::Board()

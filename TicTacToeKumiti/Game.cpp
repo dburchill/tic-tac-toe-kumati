@@ -13,6 +13,7 @@
 #include "NatBot.h"
 #include "SamuelBot.h"
 #include "SamuelBot2.h"
+#include "KyleBot.h"
 
 #include "Player.h"
 
@@ -40,12 +41,14 @@ namespace {
 
 
 Game::Game() {
+
 	bots["Thiago"] = std::move(std::make_unique<ThiagoBot>(Piece::MT));
 	bots["Brohen"] = std::move(std::make_unique<BrohenBot>(Piece::MT));
 	bots["Natalia"] = std::move(std::make_unique<NatBot>(Piece::MT));
 	bots["Dave"] = std::move(std::make_unique<DaveBot>(Piece::MT));
-	bots["Samuel1"] = std::move(std::make_unique<DaveBot>(Piece::MT));
-	bots["Samuel2"] = std::move(std::make_unique<DaveBot>(Piece::MT));
+	bots["Samuel1"] = std::move(std::make_unique<SamuelBot>(Piece::MT));
+	bots["Samuel2"] = std::move(std::make_unique<SamuelBot>(Piece::MT));
+	bots["Kyle"] = std::move(std::make_unique<KyleBot>(Piece::MT));
 
 	
 }

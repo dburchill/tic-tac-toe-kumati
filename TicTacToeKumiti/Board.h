@@ -26,6 +26,9 @@ public:
 	bool isWonBy(Piece p) const;
 	size_t size() const;
 
+	int getTurn() const;
+	Piece getPostision(size_t i) const;
+
 	static const size_t NUM_SQUARES{ 9 };
 	static const std::map<Piece, char> pieces;
 private:

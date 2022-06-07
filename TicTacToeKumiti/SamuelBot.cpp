@@ -22,7 +22,7 @@ int SamuelBot::winningMove(Board b, Piece p) const
             b.placePiece(p, i);
             if (b.isWonBy(p))
             {
-                return i;
+                return static_cast<int>(i);
             }
             else
             {
