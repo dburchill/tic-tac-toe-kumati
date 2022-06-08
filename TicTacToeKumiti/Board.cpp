@@ -34,6 +34,16 @@ size_t Board::size() const
 	return squares.size();
 }
 
+bool Board::isBlank() const
+{
+	return std::all_of(begin(squares), end(squares), [](auto p) {return p == Piece::MT; });
+}
+
+size_t Board::pieceOfKind(Piece p) const
+{
+	return std::count_if(begin(squares), end(squares), [p](auto e) {return (p == p); });
+}
+
 int Board::getTurn() const
 {
 	return 1 + std::count_if(begin(squares), end(squares),

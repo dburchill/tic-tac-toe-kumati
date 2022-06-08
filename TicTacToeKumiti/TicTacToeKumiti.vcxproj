@@ -146,6 +146,7 @@
     <ClCompile Include="Board.cpp" />
     <ClCompile Include="BrohenBot.cpp" />
     <ClCompile Include="DaveBot.cpp" />
+    <ClCompile Include="EzequielBoot.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="HumanPlayer.cpp" />
     <ClCompile Include="KyleBot.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="Board.h" />
     <ClInclude Include="BrohenBot.h" />
     <ClInclude Include="DaveBot.h" />
+    <ClInclude Include="EzequielBoot.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="HumanPlayer.h" />
     <ClInclude Include="KyleBot.h" />

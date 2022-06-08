@@ -30,6 +30,7 @@ int SamuelBot::winningMove(Board b, Piece p) const
             }
         }
     }
+    return -1;
 }
 
 
@@ -47,10 +48,9 @@ bool SamuelBot::makeMove(Board& b) const
     }*/
 
     int move = winningMove(b, getMyPiece());
-    if (move > 0)
+    if (move < 0)
     {
         move = winningMove(b, getOpponentPiece());
-
     }
     if (move > 0)
     {

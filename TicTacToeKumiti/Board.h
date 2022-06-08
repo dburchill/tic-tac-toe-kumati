@@ -25,6 +25,8 @@ public:
 
 	bool isWonBy(Piece p) const;
 	size_t size() const;
+	bool isBlank() const;
+	size_t pieceOfKind(Piece p) const;
 
 	int getTurn() const;
 	Piece getPostision(size_t i) const;

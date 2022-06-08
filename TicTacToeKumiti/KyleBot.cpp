@@ -50,7 +50,7 @@ bool KyleBot::makeMove(Board& b) const
 	case 2:
 		if (b.getPostision(1) == getOpponentPiece() || b.getPostision(3) == getOpponentPiece()
 			|| b.getPostision(7) == getOpponentPiece() || b.getPostision(9) == getOpponentPiece())
-			b.placePiece(myPiece, 4);
+			b.placePiece(myPiece, 5);
 		else
 			b.placePiece(myPiece, 1);
 		return true;
